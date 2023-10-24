@@ -37,4 +37,13 @@ default: Date.now
   toObject: {virtual: true}
 })
 
-taskSchema.pre()
+taskSchema.pre(/^find/, function (next) {
+  this.populate({
+      path: 'user',
+      select: 'fullname -_id'
+  })
+  next()
+})
+
+const taskModel = mongoose.model('Task', taskSchema)
+module.exports = { taskModel }
