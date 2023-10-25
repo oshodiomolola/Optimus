@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/mediaQ.css" />
+
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+  <title>Tackle</title>
+</head>
+
+<body>
+  <header class="navi">
+
+    <% if (user) { %>
+      <nav class="nav--bar">
+        <li><a class="nav--link" href="/overview">task</a></li>
+        <li> <a class="nav--link stats" id="stats" href="/stats">stats</a></li>
+        <div class="profile--container">
+          <li class="user-name"> Welcome <%= user.fullname.split(' ')[0] %></li>
+           <img src="/img/<%= user.photo %>" alt="<%= user.fullname %> profile pic" class="user-profile">
+
+        </div>
+        <li class="nav--logout"> <a class="nav--link logout" href="" >logout </a></li>
+
+      
+      </nav>
+      <% }%>
+
+
+  </header>
+ <span class="dts">
+   <span class="dots--container ">
+   
+    
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="dots disappear">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+    
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="dots three-dot">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+    </svg>
+    <div class="fixed--dot-child">
+      <ul class="dot--list">
+        <li class="dot--list--child"><a href="" class="dots--link">update profile</a></li>
+        <li  class="dot--list--child"><a href="" class="dots--link">deactivate account</a></li>
+        <li  class="dot--list--child"><a href="" class="dots--link logout" id="logout">logout</a></li>
+      </ul>
+    </div>
+  </span>
+
+ </span>
+ 
+  <form class="sorting" action="/searchQuery">
+    <select class="sort notSort" name="filter">
+      <option value="all">All</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+      <option value="deleted">Deleted</option>
+    </select>
+    <button type="submit" class="filter">Filter</button>
+  </form>
+
+<!-- <script src="js/index.js" type="module"></script>
+<script src="js/logout.js" type="module"></script> -->
+
+<%- include('_script.ejs') %>
+</body>
+
+</html>

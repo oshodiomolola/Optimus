@@ -2,6 +2,7 @@ const express = require('express');
 require("dotenv").config();
 const { connectToDatabase } = require("./config");
 const userRoute = require("./Routes/usersRoute");
+const ejs = require('ejs')
 const taskRoute = require("./Routes/taskRoute");
 const appError = require("./utils/errorHandler");
 const errorHandler = require('./controllers/errorController');
@@ -10,7 +11,9 @@ const PORT = process.env.PORT;
 
 const app = express();
 connectToDatabase();
-console.log(connectToDatabase)
+console.log(connectToDatabase);
+
+app.set('views engine', 'ejs')
 
 app.use(express.urlencoded({ extended: true }));
 

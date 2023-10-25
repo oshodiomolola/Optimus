@@ -1,0 +1,18 @@
+<%- include('_header.ejs') %>
+    <main class="main-overview">
+      
+      <div class="overview--input">
+        <h1 class="task--h1">task to do</h1>
+        <form class="task--entry" action="http://localhost:3000/api/v1/createTask" method="POST">
+          <input class="task-input" type="text" placeholder="What's your plan for today" id="name" name="name" />
+          <button class="task-btn">add task </button>
+        </form>
+      </div>
+     
+    
+  </main>
+  <!-- <script src="js/create_task.js" type="module"></script>
+  <script src="js/completeTask.js" type="module"></script>
+  <script src="js/delete.js" type="module"></script>
+  <script src="/js/index.mjs" type="module"></script> -->
+  <%- include('_script.ejs') %>

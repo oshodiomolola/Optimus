@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html>
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/index.css"/>
+    <link rel="stylesheet" href="/mediaQ.css"/>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png"/>
+    <title>Tackle</title>
+  </head>
+  <body class="intro-body">
+    <div class="intro--child-container">
+
+      <div class="intro login-intro"> 
+        <form class="login signUp" action="/api/v1/sign_Up" method="POST">
+          <input class="login-fullname login-cta signUp-fullname" id="fullname" type="text" placeholder="fullname" name="fullname"/>
+          <input class="login-email login-cta signUp-email" id="email" type="email" placeholder="email" name="email"/>
+          <input class="login-password login-cta signUp-password" id="password" type="password" placeholder="password" name="password"/>
+          <input class="login-confirm login-cta" id="confirmPassword" type="password" placeholder="confirm password" name="confirmPassword"/>
+          <button class="login-submit login-cta">submit </button>
+          <p class="login-p">
+            already have an account?  <a class="login-link" href="login"> login </a></p>
+        </form>
+      </div>
+    </div> 
+   
+    <script src="js/signUp.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<%- include('_header.ejs') %>
+  <div class="search-container stats-container  stats--flex">
+    <h1 class="stats--h1">
+      task statistics
+    </h1>
+
+    <% taskStats.forEach(task=> { %>
+      <div class="search-container stats-child"><span class="status <%= task.status %>">
+          <%= task.status %>
+        </span><span class="content date ">
+          <%= task.count %>
+        </span>
+     
+      </div>
+      
+      <% }); %>
+  </div>
