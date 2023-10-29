@@ -9,3 +9,4 @@ async function jwtToken(payload) {
 console.log(process.env.JWT_TOKEN);
 console.log(process.env.JWT_EXPIRATION)
 module.exports = { jwtToken }
+

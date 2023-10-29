@@ -37,7 +37,7 @@ next(new appError(err, 500))
       const token = await jwtToken(isValidUser._id)
 
       res.cookie('jwt', token, { httpOnly: true });
-      // console.log(req.cookies)
+      // console.log(req.cookie)
       res.status(200).json({ result: "SUCCESS", Message: 'You are logged in now', token, user: isValidUser })
   } catch (err) {
       next(new appError(err, 500))
@@ -47,8 +47,8 @@ next(new appError(err, 500))
 
 async function updateProfile(req, res, next) {
   try {
-      const updatesDetails = req.body
-      const updatedUser = User.findByIdAndUpdate(req.user, updatesDetails, { new: true, runValidators: true })
+      const updateDetails = req.body
+      const updatedUser = User.findByIdAndUpdate(req.user, updateDetails, { new: true, runValidators: true })
       if (updatedUser) res.status(200).json({ result: "Success", message: 'user details has been succefully updated' })
   } catch (err) {
       next(new appError(err, 500))
